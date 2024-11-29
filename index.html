@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Bookmark</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <!-- Bootstarp Stylesheet -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content py-3">
+            <h1 class="text-center mx-auto position-relative fw-bold">Bookmarker <i class="fa-regular fa-bookmark"></i></h1>
+            <h2 class="text-center pt-3 pb-4 fw-medium">Bookmark Your Favorite Sites</h2>
+            <div class="mb-5">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" oninput="validateInputs(this)" id="bookmarkName" placeholder="Bookmark Name">
+                    <span class="text-danger d-none">Name Must Be At Least 2 Characters</span>
+                    <label for="bookmarkName">Bookmark Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="url" class="form-control" oninput="validateInputs(this)" id="websiteURL" placeholder="Website URL">
+                    <span class="text-danger d-none">URL Must Be Valid</span>
+                    <label for="websiteURL">Website URL</label>
+                </div>
+                <button onclick="addBookmark()" type="submit" class="primary-btn submit-btn d-flex mx-auto">Submit</button>
+            </div>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th id="first" class="border-top-left border-bottom-left">Index</th>
+                        <th>Name</th>
+                        <th>Website</th>
+                        <th id="last" class="border-top-right border-bottom-right">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent" class="align-middle"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./JS/main.js"></script>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>
